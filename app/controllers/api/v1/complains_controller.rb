@@ -59,6 +59,7 @@ module Api
       # DELETE /complains/1
       def destroy
         @complain.destroy
+        #head 204
       end
 
       private
@@ -69,7 +70,8 @@ module Api
 
         # Only allow a trusted parameter "white list" through.
         def complain_params
-          params.require(:complain).permit(:title, :description, :city, :state, :country, :company)
+#params.require(:complain).permit(:title, :description, :city, :state, :country, :company)
+params.permit(:title, :description, :city, :state, :country, :company)
         end
     end
   end

@@ -4,10 +4,18 @@ default: &default
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
+test:
+  <<: *default
+  database: backend_test_test
+  username: <%= ENV['DBUSER'] %>
+  password: <%= ENV['DBPASS'] %>
+  host: <%= ENV['DBHOST'] %>
+
 development:
   <<: *default
   database: backend_test_development
   username: <%= ENV['DBUSER'] %>
   password: <%= ENV['DBPASS'] %>
   host: <%= ENV['DBHOST'] %>
+
 
