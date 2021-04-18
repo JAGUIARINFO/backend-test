@@ -1,9 +1,6 @@
-# README
+backend-test
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
+Rails API to save Complaints and get back summaries, not includ Users Validations, Update records and Destroy.
 
 * Ruby version
 
