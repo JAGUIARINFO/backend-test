@@ -50,14 +50,13 @@ module Api
       end
 
       # PATCH/PUT /complains/1
-      # Not implemented
-      #def update
-      #  if @complain.update(complain_params)
-      #    render json: {status: 'SUCCESS', message: 'Complain updated.', data:@complain}, status: :ok
-      #  else
-      #    render json: {status: 'ERROR', message: 'Can not update complain.', data:@complain}, status: :unprocessable_entity
-      #  end
-      #end
+      def update
+        if @complain.update(complain_params)
+          render json: {status: 'SUCCESS', message: 'Complain updated.', data:@complain}, status: :ok
+        else
+          render json: {status: 'ERROR', message: 'Can not update complain.', data:@complain}, status: :unprocessable_entity
+        end
+      end
 
       # DELETE /complains/1
       # Not implemented
