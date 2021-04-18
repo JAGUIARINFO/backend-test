@@ -4,6 +4,7 @@ module Api
       before_action :set_complain, only: [:show, :update, :destroy]
 
       # GET /complains
+      # Return Complains records, filters accept: city and company
       def index
         @complains = Complain.all
 
@@ -29,13 +30,14 @@ module Api
       end
 
       # GET /complains/1
-      def show
-        render json: @complain
-      end
+      # Not implemented
+      #def show
+      #  render json: @complain
+      #end
 
       # POST /complains
+      # Create new Complain, all fields are required: title, description, city, state, country and company
       def create
-        #Complain.delete_all
 
         @complain = Complain.new(complain_params)
 
@@ -48,19 +50,20 @@ module Api
       end
 
       # PATCH/PUT /complains/1
-      def update
-        if @complain.update(complain_params)
-          render json: {status: 'SUCCESS', message: 'Complain updated.', data:@complain}, status: :ok
-        else
-          render json: {status: 'ERROR', message: 'Can not update complain.', data:@complain}, status: :unprocessable_entity
-        end
-      end
+      # Not implemented
+      #def update
+      #  if @complain.update(complain_params)
+      #    render json: {status: 'SUCCESS', message: 'Complain updated.', data:@complain}, status: :ok
+      #  else
+      #    render json: {status: 'ERROR', message: 'Can not update complain.', data:@complain}, status: :unprocessable_entity
+      #  end
+      #end
 
       # DELETE /complains/1
-      def destroy
-        @complain.destroy
-        #head 204
-      end
+      # Not implemented
+      #def destroy
+      #  @complain.destroy
+      #end
 
       private
         # Use callbacks to share common setup or constraints between actions.
@@ -71,7 +74,7 @@ module Api
         # Only allow a trusted parameter "white list" through.
         def complain_params
 #params.require(:complain).permit(:title, :description, :city, :state, :country, :company)
-params.permit(:title, :description, :city, :state, :country, :company)
+          params.permit(:title, :description, :city, :state, :country, :company)
         end
     end
   end
